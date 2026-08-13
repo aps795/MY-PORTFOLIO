@@ -49,19 +49,7 @@ function typeTitle() {
 // Start typing animation when page loads
 window.addEventListener('load', () => {
     typeTitle();
-
-    // Apply stored theme preference
-    if (localStorage.getItem('pref-theme') === 'dark') document.body.classList.add('dark');
 });
-
-// ==================== Theme Toggle ==================== //
-const themeBtn = document.getElementById('theme-toggle');
-if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        localStorage.setItem('pref-theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    });
-}
 
 // ==================== Mobile Menu Toggle ==================== //
 hamburger.addEventListener('click', () => {
@@ -156,42 +144,39 @@ sections.forEach(section => {
 });
 
 // ==================== Contact Form Handling ==================== //
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form values
+    const name = contactForm.querySelector('input[type="text"]').value;
+    const email = contactForm.querySelector('input[type="email"]').value;
+    const message = contactForm.querySelector('textarea').value;
+    
+    // Validate form
+    if (name && email && message) {
+        // Show success message
+        const submitButton = contactForm.querySelector('.contact-submit');
+        const originalText = submitButton.innerHTML;
         
-        // Get form values
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
+        submitButton.innerHTML = '<span>Message Transmitted</span>';
+        submitButton.style.borderColor = 'var(--accent-green)';
+        submitButton.style.color = 'var(--accent-green)';
         
-        // Validate form
-        if (name && email && message) {
-            // Show success message
-            const submitButton = contactForm.querySelector('.contact-submit');
-            const originalText = submitButton.innerHTML;
-            
-            submitButton.innerHTML = '<span>Message Transmitted</span>';
-            submitButton.style.borderColor = 'var(--accent-green)';
-            submitButton.style.color = 'var(--accent-green)';
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitButton.innerHTML = originalText;
-                submitButton.style.borderColor = '';
-                submitButton.style.color = '';
-            }, 3000);
-        }
-    });
-}
+        // Reset form
+        contactForm.reset();
+        
+        // Reset button after 3 seconds
+        setTimeout(() => {
+            submitButton.innerHTML = originalText;
+            submitButton.style.borderColor = '';
+            submitButton.style.color = '';
+        }, 3000);
+    }
+});
 
 // ==================== Parallax Grid Background ==================== //
 window.addEventListener('mousemove', (e) => {
     const grid = document.querySelector('.grid-background');
-    if (!grid) return;
     const x = (e.clientX / window.innerWidth) * 50;
     const y = (e.clientY / window.innerHeight) * 50;
     
@@ -207,16 +192,14 @@ window.addEventListener('scroll', () => {
     
     // Update navbar style
     const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        if (lastScrollY > 50) {
-            navbar.style.borderBottomColor = 'rgba(0, 0, 0, 0.06)';
-        } else {
-            navbar.style.borderBottomColor = '';
-        }
+    if (lastScrollY > 50) {
+        navbar.style.borderBottomColor = 'rgba(0, 245, 255, 0.1)';
+    } else {
+        navbar.style.borderBottomColor = 'var(--accent-cyan)';
     }
     
     // Parallax effect for hero
-    if (targetSection && lastScrollY < targetSection.offsetHeight) {
+    if (lastScrollY < targetSection.offsetHeight) {
         const elements = targetSection.querySelectorAll('.hero-content, .hero-profile');
         elements.forEach((el, index) => {
             el.style.transform = `translateY(${lastScrollY * 0.5}px)`;

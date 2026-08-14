@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Portfolio logo">
+  <rect width="120" height="120" rx="20" fill="#6C5CE7"/>
+  <g fill="#fff" font-family="Inter, Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <text x="60" y="70" font-size="36">APS</text>
+  </g>
+</svg>

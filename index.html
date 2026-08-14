@@ -135,31 +135,77 @@
       <p class="section-sub">Technical & Professional</p>
 
       <div class="skills-grid">
+        <!-- Circular skill cards with percentage -->
         <div class="skill-card">
-          <h4>Programming</h4>
-          <ul>
-            <li>Python — 85%</li>
-            <li>JavaScript — 75%</li>
-            <li>SQL — 75%</li>
-          </ul>
+          <div class="skill-chart" data-percent="85" aria-hidden="true">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <path class="circle" stroke-dasharray="0,100" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <text x="18" y="20.35" class="percent">85%</text>
+            </svg>
+          </div>
+          <h4>Python</h4>
+          <p class="muted">Data analysis, scripting, ML prototyping</p>
         </div>
 
         <div class="skill-card">
-          <h4>AI / ML</h4>
-          <ul>
-            <li>Basics of ML, scikit-learn</li>
-            <li>PyTorch / TensorFlow (learning)</li>
-            <li>NLP & Chatbots</li>
-          </ul>
+          <div class="skill-chart" data-percent="75" aria-hidden="true">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <path class="circle" stroke-dasharray="0,100" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <text x="18" y="20.35" class="percent">75%</text>
+            </svg>
+          </div>
+          <h4>JavaScript</h4>
+          <p class="muted">Front-end, DOM, interactive UI</p>
         </div>
 
         <div class="skill-card">
-          <h4>Web & Database</h4>
-          <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>Flask / Node basics</li>
-            <li>MySQL / SQLite</li>
-          </ul>
+          <div class="skill-chart" data-percent="75" aria-hidden="true">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <path class="circle" stroke-dasharray="0,100" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <text x="18" y="20.35" class="percent">75%</text>
+            </svg>
+          </div>
+          <h4>SQL & Databases</h4>
+          <p class="muted">Design, queries, optimization</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-chart" data-percent="70" aria-hidden="true">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <path class="circle" stroke-dasharray="0,100" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <text x="18" y="20.35" class="percent">70%</text>
+            </svg>
+          </div>
+          <h4>AI Fundamentals</h4>
+          <p class="muted">ML concepts, model evaluation</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-chart" data-percent="88" aria-hidden="true">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <path class="circle" stroke-dasharray="0,100" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <text x="18" y="20.35" class="percent">88%</text>
+            </svg>
+          </div>
+          <h4>Problem Solving</h4>
+          <p class="muted">Algorithms and troubleshooting</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-chart" data-percent="60" aria-hidden="true">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <path class="circle" stroke-dasharray="0,100" d="M18 2.0845a15.9155 15.9155 0 1 1 0 31.831"/>
+              <text x="18" y="20.35" class="percent">60%</text>
+            </svg>
+          </div>
+          <h4>PyTorch / TF (Learning)</h4>
+          <p class="muted">Experimental deep learning workflows</p>
         </div>
 
       </div>
@@ -181,6 +227,7 @@
         <article class="project-card" data-category="ai">
           <img src="assets/project-thinkora.jpg" alt="Thinkora AI">
           <div class="project-body">
+            <img class="project-logo" src="assets/project-thinkora-logo.svg" alt="Thinkora logo">
             <h3>Thinkora AI — Chat Bot</h3>
             <p>AI assistant for learning and customer support. Built with retrieval and lightweight NLU components.</p>
             <div class="project-meta">Python • NLP • Flask</div>
@@ -191,6 +238,7 @@
         <article class="project-card" data-category="app">
           <img src="assets/project-adicart.jpg" alt="AdiCart">
           <div class="project-body">
+            <img class="project-logo" src="assets/project-adicart-logo.svg" alt="AdiCart logo">
             <h3>AdiCart — Shopping App</h3>
             <p>E-commerce app with UX improvements and cart flows.</p>
             <div class="project-meta">JavaScript • HTML • CSS</div>
@@ -201,6 +249,7 @@
         <article class="project-card" data-category="website">
           <img src="assets/project-railtrack.jpg" alt="RailTrack">
           <div class="project-body">
+            <img class="project-logo" src="assets/project-railtrack-logo.svg" alt="RailTrack logo">
             <h3>RailTrack</h3>
             <p>Train tracking & schedule web app for Indian Railways.</p>
             <div class="project-meta">HTML • JS • APIs</div>
@@ -211,6 +260,7 @@
         <article class="project-card" data-category="website">
           <img src="assets/project-portfolio.jpg" alt="My Portfolio">
           <div class="project-body">
+            <img class="project-logo" src="assets/project-portfolio-logo.svg" alt="Portfolio logo">
             <h3>My Portfolio</h3>
             <p>Personal website and dashboard (this project).</p>
             <div class="project-meta">HTML • CSS • JavaScript</div>

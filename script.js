@@ -132,4 +132,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const activeBtn = document.querySelector('.filter-btn.active');
   if (activeBtn) setFilter(activeBtn.dataset.filter);
 
+  // Animate circular skill charts
+  const charts = document.querySelectorAll('.skill-chart');
+  charts.forEach(chart => {
+    const percent = Number(chart.dataset.percent) || 0;
+    const circle = chart.querySelector('.circle');
+    if (!circle) return;
+    const dash = Math.max(0, Math.min(100, percent));
+    circle.style.transition = 'stroke-dasharray 900ms cubic-bezier(.2,.8,.2,1)';
+    setTimeout(() => {
+      circle.setAttribute('stroke-dasharray', `${dash},100`);
+    }, 120);
+  });
+
 });

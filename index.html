@@ -11,21 +11,24 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#">APS</a>
+      <a class="logo" href="#home">APS</a>
 
-      <nav class="nav" id="main-nav">
+      <nav class="nav" id="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
+        <button id="theme-toggle" class="btn btn-outline" aria-label="Toggle theme">Dark/Light</button>
         <a class="btn btn-cta" href="#contact">Hire Me</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -39,126 +42,133 @@
         <div class="hero-text">
           <p class="eyebrow">Hello, I’m</p>
           <h1 class="headline">Abhishek Pratap Singh — UI/UX & AI Enthusiast</h1>
-          <p class="subhead">Passionate about artificial intelligence, programming, and emerging technologies. Focused on building strong foundations in computer science and developing future-ready skills.</p>
+          <p class="subhead">Passionate about artificial intelligence, programming, and emerging technologies. Focused on building strong foundations in computer science and developing future-ready solutions.</p>
 
           <div class="hero-ctas">
-            <a class="btn btn-cta" href="#contact">Hire Me</a>
-            <a class="btn btn-outline" href="assets/resume.pdf" download>Download Profile</a>
+            <a class="btn btn-cta" href="#portfolio">View Projects</a>
+            <a class="btn btn-outline" href="assets/resume.pdf" download>Download Resume</a>
           </div>
 
-          <ul class="stats">
+          <ul class="stats" aria-hidden="true">
             <li><strong>6+</strong><span>Years Experience</span></li>
-            <li><strong>40+</strong><span>Projects Done</span></li>
+            <li><strong>40+</strong><span>Projects</span></li>
             <li><strong>30+</strong><span>Happy Clients</span></li>
           </ul>
 
-          <div class="socials">
-            <a href="https://www.linkedin.com/in/abhishek-pratap-singh-641208369" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <div class="socials" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/abhishek-pratap-singh-641208369" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://github.com/aps795" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
           </div>
         </div>
 
         <div class="hero-media">
-          <img class="profile-photo" src="img3.jpg" alt="Abhishek Pratap Singh">
+          <div class="profile-frame" role="img" aria-label="Profile photo of Abhishek Pratap Singh">
+            <img class="profile-photo" src="img3.jpg" alt="Abhishek Pratap Singh">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES (dashboard-like tiles) -->
+    <!-- SERVICES -->
     <section id="services" class="section container">
-      <h2 class="section-title">Dashboard</h2>
-      <p class="section-sub">Quick overview</p>
+      <h2 class="section-title">Services</h2>
+      <p class="section-sub">What I can do</p>
 
       <div class="services-grid">
         <article class="service-card">
-          <div class="service-icon">📊</div>
-          <h3>System Status</h3>
-          <p>Live system health & recent activity for projects and experiments.</p>
+          <div class="service-icon">🤖</div>
+          <h3>AI / ML Development</h3>
+          <p>Model prototyping, data pipelines, training, and lightweight deployment.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Full-Stack Web Dev</h3>
+          <p>Responsive websites, front-end UI, and backend APIs with databases.</p>
         </article>
 
         <article class="service-card">
           <div class="service-icon">⚙️</div>
-          <h3>Model Ops</h3>
-          <p>Model pipelines, training runs, and deployment monitoring.</p>
+          <h3>Automation & Tooling</h3>
+          <p>Scripts, tooling, and workflow automation for reproducible results.</p>
         </article>
 
         <article class="service-card">
-          <div class="service-icon">🧭</div>
-          <h3>Research</h3>
-          <p>Notes, papers, and prototypes for AI & ML experiments.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon">💼</div>
-          <h3>Projects</h3>
-          <p>Active initiatives: Thinkora AI, AdiCart, RailTrack, and portfolio improvements.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon">📁</div>
-          <h3>Credentials</h3>
-          <p>Certifications and training records maintained in the vault.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon">✉️</div>
-          <h3>Communication</h3>
-          <p>Messages, contact requests and collaboration opportunities.</p>
+          <div class="service-icon">🧠</div>
+          <h3>Chatbots & NLP</h3>
+          <p>Conversational agents, retrieval-augmented generation, and assistants.</p>
         </article>
       </div>
     </section>
 
-    <!-- ABOUT (preserve profile data) -->
+    <!-- ABOUT -->
     <section id="about" class="section container about-section">
       <div class="about-inner">
         <div class="about-media">
-          <img src="img3.jpg" alt="Profile photo">
+          <img class="about-photo" src="img3.jpg" alt="Profile photo">
         </div>
 
         <div class="about-content">
-          <h2 class="section-title">About</h2>
-          <p class="bio">Currently pursuing Bachelor of Computer Applications from Dr. Harisingh Gour Central University, Sagar. Interested in Artificial Intelligence, Machine Learning, Robotics and software development. Eager to explore innovative ideas and build strong technical knowledge. Dedicated to learning modern technologies and becoming a skilled IT professional.</p>
+          <h2 class="section-title">About Me</h2>
+          <p class="bio">I am currently pursuing Bachelor of Computer Applications from Dr. Harisingh Gour Central University, Sagar. My interests include Artificial Intelligence, Machine Learning, and Robotics. I enjoy building projects that apply practical ML solutions and refining UI/UX for better user outcomes.</p>
 
-          <a class="btn btn-outline" href="assets/resume.pdf" download>Download Profile</a>
-
-          <div class="skills">
-            <h4>Skills</h4>
-            <div class="skill">
-              <div class="skill-meta"><span>Python</span><span>85%</span></div>
-              <div class="skill-bar"><div style="width:85%"></div></div>
+          <div class="about-grid">
+            <div>
+              <h4>Education</h4>
+              <p>BCA — Dr. Harisingh Gour Central University, Sagar</p>
             </div>
-            <div class="skill">
-              <div class="skill-meta"><span>SQL</span><span>75%</span></div>
-              <div class="skill-bar"><div style="width:75%"></div></div>
-            </div>
-            <div class="skill">
-              <div class="skill-meta"><span>AI Fundamentals</span><span>70%</span></div>
-              <div class="skill-bar"><div style="width:70%"></div></div>
-            </div>
-            <div class="skill">
-              <div class="skill-meta"><span>Problem Solving</span><span>88%</span></div>
-              <div class="skill-bar"><div style="width:88%"></div></div>
+            <div>
+              <h4>Career Interests</h4>
+              <p>AI/ML internships, research assistance, full-stack development roles, and collaborative open-source projects.</p>
             </div>
           </div>
 
-          <div class="tools">
-            <h4>Tools</h4>
-            <div class="tool-logos">
-              <img src="assets/tool-figma.svg" alt="Figma" title="Figma">
-              <img src="assets/tool-xd.svg" alt="Adobe XD" title="Adobe XD">
-              <img src="assets/tool-ps.svg" alt="Photoshop" title="Photoshop">
-              <img src="assets/tool-ai.svg" alt="Illustrator" title="Illustrator">
-              <img src="assets/tool-pr.svg" alt="Premiere" title="Premiere">
-            </div>
-          </div>
+          <a class="btn btn-outline" href="assets/resume.pdf" download>Download Resume</a>
+
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO (preserve project entries) -->
+    <!-- SKILLS -->
+    <section id="skills" class="section container">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-sub">Technical & Professional</p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>Programming</h4>
+          <ul>
+            <li>Python — 85%</li>
+            <li>JavaScript — 75%</li>
+            <li>SQL — 75%</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h4>AI / ML</h4>
+          <ul>
+            <li>Basics of ML, scikit-learn</li>
+            <li>PyTorch / TensorFlow (learning)</li>
+            <li>NLP & Chatbots</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h4>Web & Database</h4>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Flask / Node basics</li>
+            <li>MySQL / SQLite</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
     <section id="portfolio" class="section container">
-      <h2 class="section-title">Portfolio</h2>
-      <p class="section-sub">Selected projects</p>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">Selected work</p>
 
       <div class="portfolio-filters">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -170,24 +180,102 @@
       <div class="projects-grid">
         <article class="project-card" data-category="ai">
           <img src="assets/project-thinkora.jpg" alt="Thinkora AI">
-          <div class="project-overlay"><h3>Thinkora AI – Chat Bot</h3><p>AI assistant, study tools, customer support.</p></div>
+          <div class="project-body">
+            <h3>Thinkora AI — Chat Bot</h3>
+            <p>AI assistant for learning and customer support. Built with retrieval and lightweight NLU components.</p>
+            <div class="project-meta">Python • NLP • Flask</div>
+            <div class="project-actions"><a href="#" class="btn btn-outline">GitHub</a><a href="#" class="btn btn-primary">Live Demo</a></div>
+          </div>
         </article>
 
         <article class="project-card" data-category="app">
           <img src="assets/project-adicart.jpg" alt="AdiCart">
-          <div class="project-overlay"><h3>AdiCart – Shopping App</h3><p>E-commerce platform and UX improvements.</p></div>
+          <div class="project-body">
+            <h3>AdiCart — Shopping App</h3>
+            <p>E-commerce app with UX improvements and cart flows.</p>
+            <div class="project-meta">JavaScript • HTML • CSS</div>
+            <div class="project-actions"><a href="#" class="btn btn-outline">GitHub</a></div>
+          </div>
         </article>
 
         <article class="project-card" data-category="website">
           <img src="assets/project-railtrack.jpg" alt="RailTrack">
-          <div class="project-overlay"><h3>RailTrack</h3><p>Train tracking & schedule web app for Indian Railways.</p></div>
+          <div class="project-body">
+            <h3>RailTrack</h3>
+            <p>Train tracking & schedule web app for Indian Railways.</p>
+            <div class="project-meta">HTML • JS • APIs</div>
+            <div class="project-actions"><a href="#" class="btn btn-outline">GitHub</a></div>
+          </div>
         </article>
 
         <article class="project-card" data-category="website">
           <img src="assets/project-portfolio.jpg" alt="My Portfolio">
-          <div class="project-overlay"><h3>My Portfolio</h3><p>Personal website and dashboard.</p></div>
+          <div class="project-body">
+            <h3>My Portfolio</h3>
+            <p>Personal website and dashboard (this project).</p>
+            <div class="project-meta">HTML • CSS • JavaScript</div>
+            <div class="project-actions"><a href="#" class="btn btn-outline">View</a></div>
+          </div>
         </article>
       </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section container">
+      <h2 class="section-title">Experience & Internships</h2>
+      <p class="section-sub">Timeline</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2024 — Present</div>
+          <div class="timeline-body">
+            <h4>AI Research / Projects</h4>
+            <p>Building small-scale ML prototypes and exploring NLP projects.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2022 — 2023</div>
+          <div class="timeline-body">
+            <h4>Web Development Projects</h4>
+            <p>Freelance and university projects focusing on front-end and databases.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="section container">
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-sub">Verified learning</p>
+
+      <div class="cert-grid">
+        <div class="cert-card">
+          <h4>Certificate Title</h4>
+          <p>Issuing Organization — Date</p>
+          <a href="#" class="btn btn-outline">View</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section container">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h4>Bachelor of Computer Applications (BCA)</h4>
+          <p>Dr. Harisingh Gour Central University, Sagar</p>
+          <p>Relevant coursework: Data Structures, Databases, AI Foundations</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section container">
+      <h2 class="section-title">Achievements</h2>
+      <ul class="achieve-list">
+        <li>Hackathons, coding platform ranks, awards — list your achievements here.</li>
+      </ul>
     </section>
 
     <!-- CONTACT -->
@@ -200,6 +288,7 @@
           <h3>Contact</h3>
           <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
           <p>LinkedIn: <a href="https://www.linkedin.com/in/abhishek-pratap-singh-641208369" target="_blank">Profile</a></p>
+          <p>GitHub: <a href="https://github.com/aps795" target="_blank">aps795</a></p>
         </div>
 
         <form class="contact-form" action="#" method="post" onsubmit="alert('Replace with working form handler'); return false;">
@@ -211,6 +300,8 @@
       </div>
     </section>
   </main>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <footer class="site-footer">
     <div class="container footer-inner">

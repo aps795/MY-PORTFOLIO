@@ -132,17 +132,74 @@ document.addEventListener('DOMContentLoaded', function () {
   const activeBtn = document.querySelector('.filter-btn.active');
   if (activeBtn) setFilter(activeBtn.dataset.filter);
 
-  // Animate circular skill charts
+  // Animate circular skill charts with enhanced styling
   const charts = document.querySelectorAll('.skill-chart');
   charts.forEach(chart => {
     const percent = Number(chart.dataset.percent) || 0;
     const circle = chart.querySelector('.circle');
     if (!circle) return;
     const dash = Math.max(0, Math.min(100, percent));
-    circle.style.transition = 'stroke-dasharray 900ms cubic-bezier(.2,.8,.2,1)';
-    setTimeout(() => {
-      circle.setAttribute('stroke-dasharray', `${dash},100`);
-    }, 120);
+    circle.style.transition = 'stroke-dasharray 1200ms cubic-bezier(.34,.1,.68,.55)';
+    
+    // Add observer to animate on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            circle.setAttribute('stroke-dasharray', `${dash},100`);
+          }, 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(chart);
   });
+
+  // Timeline animation on scroll
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  if (timelineItems.length && 'IntersectionObserver' in window) {
+    const timelineObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+          timelineObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    timelineItems.forEach(item => timelineObserver.observe(item));
+  }
+
+  // Skill card stagger animation
+  const skillCards = document.querySelectorAll('.skill-card');
+  if (skillCards.length && 'IntersectionObserver' in window) {
+    const skillObserver = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = `fadeInUp 0.6s ease ${index * 0.1}s forwards`;
+          skillObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    skillCards.forEach(card => skillObserver.observe(card));
+  }
+
+  // Add fadeInUp keyframes dynamically
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  `;
+  document.head.appendChild(style);
 
 });

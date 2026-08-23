@@ -1,9 +1,9 @@
 ﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
   <defs>
-    <linearGradient id="rtbGradBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e1829" />
-      <stop offset="50%" stop-color="#091222" />
-      <stop offset="100%" stop-color="#040914" />
+    <linearGradient id="rtbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c182b" />
+      <stop offset="50%" stop-color="#081020" />
+      <stop offset="100%" stop-color="#030710" />
     </linearGradient>
     <linearGradient id="rtbOrange" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FF6B35" />
@@ -19,28 +19,28 @@
     </filter>
   </defs>
 
-  <rect width="600" height="340" fill="url(#rtbGradBg)"/>
+  <rect width="600" height="340" fill="url(#rtbGrad)"/>
 
-  <!-- GPS route background lines -->
-  <g opacity="0.15" stroke="#38BDF8" stroke-width="1.5">
+  <!-- GPS route background tracks -->
+  <g opacity="0.12" stroke="#38BDF8" stroke-width="1.5">
     <path d="M30 60 Q120 180 240 140 T420 180 T570 100" fill="none" stroke-dasharray="6 6"/>
     <path d="M60 280 Q200 220 340 260 T560 220" fill="none" stroke-dasharray="4 4"/>
   </g>
 
-  <!-- Left: Live Train Status Dashboard Card -->
-  <g transform="translate(40, 40)">
-    <rect width="250" height="260" rx="14" fill="#0f1b2f" stroke="rgba(255, 107, 53, 0.3)" stroke-width="1.5"/>
+  <!-- Left: Live Train Telemetry Dashboard -->
+  <g transform="translate(35, 35)">
+    <rect width="250" height="270" rx="14" fill="#0d1829" stroke="rgba(255, 107, 53, 0.3)" stroke-width="1.5"/>
     
     <!-- Train Header Status -->
-    <rect x="15" y="15" width="220" height="46" rx="10" fill="rgba(255, 107, 53, 0.12)"/>
-    <text x="28" y="35" fill="#FF9268" font-family="Inter, sans-serif" font-size="12" font-weight="700">12951 • Rajdhani Express</text>
-    <text x="28" y="52" fill="#10B981" font-family="Inter, sans-serif" font-size="10" font-weight="600">● Running On Time (+0 min)</text>
+    <rect x="15" y="15" width="220" height="48" rx="10" fill="rgba(255, 107, 53, 0.12)"/>
+    <text x="26" y="35" fill="#FF9268" font-family="Inter, sans-serif" font-size="11.5" font-weight="700">12951 • Rajdhani Express</text>
+    <text x="26" y="51" fill="#10B981" font-family="Inter, sans-serif" font-size="10" font-weight="600">● Running On Time (+0 min)</text>
     
     <!-- Route Progress Tracker -->
     <!-- Station 1 -->
     <circle cx="35" cy="85" r="5" fill="#10B981" filter="url(#rtbGlow)"/>
     <text x="50" y="88" fill="#F1F5F9" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">New Delhi (NDLS)</text>
-    <text x="185" y="88" fill="#94A3B8" font-family="Inter, sans-serif" font-size="9.5">16:55 Dept</text>
+    <text x="180" y="88" fill="#94A3B8" font-family="Inter, sans-serif" font-size="9">16:55 Dept</text>
 
     <!-- Connecting line -->
     <line x1="35" y1="92" x2="35" y2="128" stroke="#10B981" stroke-width="2.5"/>
@@ -48,9 +48,9 @@
     <!-- Station 2 (Live location indicator) -->
     <circle cx="35" cy="135" r="7" fill="#FF6B35" filter="url(#rtbGlow)"/>
     <circle cx="35" cy="135" r="3" fill="#FFFFFF"/>
-    <text x="50" y="134" fill="#FFA26B" font-family="Inter, sans-serif" font-size="11" font-weight="700">Kota Jn (KOTA) - LIVE</text>
-    <text x="50" y="148" fill="#64748B" font-family="Inter, sans-serif" font-size="9">Platform 1 • 2 min halt</text>
-    <text x="185" y="134" fill="#FF9268" font-family="Inter, sans-serif" font-size="9.5" font-weight="700">22:00 Arr</text>
+    <text x="50" y="133" fill="#FFA26B" font-family="Inter, sans-serif" font-size="11" font-weight="700">Kota Jn (KOTA) - LIVE</text>
+    <text x="50" y="147" fill="#64748B" font-family="Inter, sans-serif" font-size="9">Platform 1 • 2 min halt</text>
+    <text x="180" y="133" fill="#FF9268" font-family="Inter, sans-serif" font-size="9" font-weight="700">22:00 Arr</text>
 
     <!-- Connecting line dashed for future -->
     <line x1="35" y1="144" x2="35" y2="185" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="3 3"/>
@@ -58,43 +58,43 @@
     <!-- Station 3 -->
     <circle cx="35" cy="192" r="5" fill="#64748B"/>
     <text x="50" y="195" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10.5">Mumbai Central (MMCT)</text>
-    <text x="185" y="195" fill="#64748B" font-family="Inter, sans-serif" font-size="9.5">08:35 Arr</text>
+    <text x="180" y="195" fill="#64748B" font-family="Inter, sans-serif" font-size="9">08:35 Arr</text>
 
-    <!-- Current Speed & Distance badge -->
-    <rect x="15" y="216" width="220" height="30" rx="8" fill="#172338"/>
-    <text x="28" y="235" fill="#38BDF8" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">⚡ Speed: 128 km/h</text>
-    <text x="150" y="235" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10.5">Dist: 465 km left</text>
+    <!-- Speed & Telemetry badge -->
+    <rect x="15" y="222" width="220" height="34" rx="8" fill="#132036"/>
+    <text x="25" y="243" fill="#38BDF8" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">⚡ Speed: 130 km/h</text>
+    <text x="145" y="243" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10">Dist: 465 km left</text>
   </g>
 
-  <!-- Right: Indian Railways Live Schedule & API Engine -->
-  <g transform="translate(315, 40)">
-    <rect width="245" height="260" rx="14" fill="#0b1322" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5"/>
+  <!-- Right: Indian Railways Live Radar & Search Card -->
+  <g transform="translate(310, 35)">
+    <rect width="255" height="270" rx="14" fill="#0b1322" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
     
-    <text x="20" y="32" fill="#F1F5F9" font-family="Inter, sans-serif" font-size="13" font-weight="700">IR Live Schedule &amp; Route</text>
-    <line x1="20" y1="44" x2="225" y2="44" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="20" y="32" fill="#F1F5F9" font-family="Inter, sans-serif" font-size="13" font-weight="700">IR Live Schedule &amp; Radar</text>
+    <line x1="20" y1="44" x2="235" y2="44" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
 
     <!-- Live Map Radar Simulation -->
     <g transform="translate(20, 56)">
-      <rect width="205" height="120" rx="10" fill="#08101e" stroke="rgba(56, 189, 248, 0.2)"/>
-      <circle cx="102" cy="60" r="45" fill="none" stroke="rgba(56, 189, 248, 0.15)"/>
-      <circle cx="102" cy="60" r="30" fill="none" stroke="rgba(56, 189, 248, 0.25)"/>
-      <line x1="102" y1="15" x2="102" y2="105" stroke="rgba(56, 189, 248, 0.2)"/>
-      <line x1="57" y1="60" x2="147" y2="60" stroke="rgba(56, 189, 248, 0.2)"/>
+      <rect width="215" height="125" rx="10" fill="#08101e" stroke="rgba(56, 189, 248, 0.2)"/>
+      <circle cx="107" cy="62" r="48" fill="none" stroke="rgba(56, 189, 248, 0.15)"/>
+      <circle cx="107" cy="62" r="32" fill="none" stroke="rgba(56, 189, 248, 0.25)"/>
+      <line x1="107" y1="14" x2="107" y2="110" stroke="rgba(56, 189, 248, 0.2)"/>
+      <line x1="59" y1="62" x2="155" y2="62" stroke="rgba(56, 189, 248, 0.2)"/>
       <!-- Track curve -->
-      <path d="M30 90 Q102 30 175 75" fill="none" stroke="url(#rtbOrange)" stroke-width="3"/>
+      <path d="M30 95 Q107 35 185 80" fill="none" stroke="url(#rtbOrange)" stroke-width="3"/>
       <!-- Moving Train Pulse -->
-      <circle cx="102" cy="52" r="6" fill="#FF6B35" filter="url(#rtbGlow)"/>
-      <circle cx="102" cy="52" r="2.5" fill="#FFFFFF"/>
-      <text x="114" y="55" fill="#FFA26B" font-family="Inter, sans-serif" font-size="9" font-weight="700">LIVE</text>
+      <circle cx="107" cy="55" r="7" fill="#FF6B35" filter="url(#rtbGlow)"/>
+      <circle cx="107" cy="55" r="3" fill="#FFFFFF"/>
+      <text x="120" y="58" fill="#FFA26B" font-family="Inter, sans-serif" font-size="9.5" font-weight="700">LIVE</text>
     </g>
 
-    <!-- Live PNR / API Query Mockup -->
-    <rect x="20" y="190" width="205" height="28" rx="6" fill="#132034" stroke="rgba(255,255,255,0.1)"/>
-    <text x="30" y="208" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10.5">Search Train No / Station...</text>
-    <rect x="175" y="193" width="46" height="22" rx="4" fill="url(#rtbOrange)"/>
-    <text x="183" y="208" fill="#081021" font-family="Inter, sans-serif" font-size="9" font-weight="700">Track</text>
+    <!-- Search Train / PNR Mockup -->
+    <rect x="20" y="195" width="215" height="30" rx="6" fill="#132034" stroke="rgba(255,255,255,0.1)"/>
+    <text x="30" y="214" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10">Search Train No / Station...</text>
+    <rect x="180" y="198" width="50" height="24" rx="4" fill="url(#rtbOrange)"/>
+    <text x="190" y="214" fill="#081021" font-family="Inter, sans-serif" font-size="9.5" font-weight="700">Track</text>
 
-    <!-- Bottom Status -->
-    <text x="20" y="242" fill="#10B981" font-family="Inter, sans-serif" font-size="9.5">✓ Connected to Indian Railways APIs</text>
+    <!-- Status -->
+    <text x="20" y="248" fill="#10B981" font-family="Inter, sans-serif" font-size="9.5">✓ Connected to Indian Railways APIs</text>
   </g>
 </svg>

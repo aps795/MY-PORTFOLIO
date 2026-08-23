@@ -1,17 +1,17 @@
 ﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
   <defs>
-    <linearGradient id="tkGradBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#111827" />
-      <stop offset="50%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#070b14" />
+    <linearGradient id="tkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="50%" stop-color="#080e1e" />
+      <stop offset="100%" stop-color="#040711" />
+    </linearGradient>
+    <linearGradient id="tkBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
     </linearGradient>
     <linearGradient id="tkOrange" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FF6B35" />
       <stop offset="100%" stop-color="#FFA26B" />
-    </linearGradient>
-    <linearGradient id="tkCyan" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06B6D4" />
-      <stop offset="100%" stop-color="#3B82F6" />
     </linearGradient>
     <filter id="tkGlow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="6" result="blur" />
@@ -20,71 +20,98 @@
   </defs>
 
   <!-- Background -->
-  <rect width="600" height="340" fill="url(#tkGradBg)"/>
-  
-  <!-- Subtle Grid -->
-  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
-    <line x1="0" y1="68" x2="600" y2="68"/>
-    <line x1="0" y1="136" x2="600" y2="136"/>
-    <line x1="0" y1="204" x2="600" y2="204"/>
-    <line x1="0" y1="272" x2="600" y2="272"/>
-    <line x1="120" y1="0" x2="120" y2="340"/>
-    <line x1="240" y1="0" x2="240" y2="340"/>
-    <line x1="360" y1="0" x2="360" y2="340"/>
-    <line x1="480" y1="0" x2="480" y2="340"/>
+  <rect width="600" height="340" fill="url(#tkBg)"/>
+
+  <!-- Neural Net Background Grid -->
+  <g opacity="0.12" stroke="#38BDF8" stroke-width="1">
+    <circle cx="80" cy="80" r="3"/>
+    <circle cx="180" cy="60" r="3"/>
+    <circle cx="120" cy="180" r="4"/>
+    <circle cx="220" cy="220" r="3"/>
+    <circle cx="60" cy="260" r="3"/>
+    <line x1="80" y1="80" x2="180" y2="60"/>
+    <line x1="80" y1="80" x2="120" y2="180"/>
+    <line x1="180" y1="60" x2="220" y2="220"/>
+    <line x1="120" y1="180" x2="220" y2="220"/>
+    <line x1="120" y1="180" x2="60" y2="260"/>
   </g>
 
-  <!-- Ambient Glow Circles -->
-  <circle cx="150" cy="170" r="120" fill="#FF6B35" opacity="0.12" filter="url(#tkGlow)"/>
-  <circle cx="450" cy="150" r="100" fill="#06B6D4" opacity="0.1" filter="url(#tkGlow)"/>
+  <!-- Left: AI Core Neural Radar -->
+  <g transform="translate(30, 45)">
+    <!-- Outer Radar Rings -->
+    <circle cx="100" cy="125" r="95" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <circle cx="100" cy="125" r="72" fill="none" stroke="rgba(255, 107, 53, 0.2)" stroke-width="1.5"/>
+    <circle cx="100" cy="125" r="50" fill="rgba(56, 189, 248, 0.04)" stroke="url(#tkBlue)" stroke-width="2"/>
+    
+    <!-- Coordinate lines -->
+    <line x1="15" y1="125" x2="185" y2="125" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1"/>
+    <line x1="100" y1="40" x2="100" y2="210" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1"/>
 
-  <!-- Left: AI Assistant Visual Hologram -->
-  <g transform="translate(60, 50)">
-    <!-- Circuit lines -->
-    <path d="M40 70 L90 70 L120 110 L160 110" fill="none" stroke="rgba(255, 107, 53, 0.4)" stroke-width="2"/>
-    <path d="M70 180 L110 180 L140 140 L180 140" fill="none" stroke="rgba(6, 182, 212, 0.4)" stroke-width="2"/>
-    
-    <!-- Central AI Core -->
-    <circle cx="100" cy="120" r="50" fill="rgba(15, 23, 42, 0.8)" stroke="url(#tkOrange)" stroke-width="2"/>
-    <circle cx="100" cy="120" r="38" fill="none" stroke="rgba(6, 182, 212, 0.5)" stroke-dasharray="6 4"/>
-    
-    <!-- Bot Avatar Icon -->
-    <circle cx="100" cy="115" r="18" fill="rgba(255, 107, 53, 0.2)"/>
-    <path d="M92 110 C92 104 96 100 100 100 C104 100 108 104 108 110 L108 122 C108 124 104 126 100 126 C96 126 92 124 92 122 Z" fill="url(#tkOrange)"/>
-    <circle cx="97" cy="112" r="2" fill="#FFFFFF"/>
-    <circle cx="103" cy="112" r="2" fill="#FFFFFF"/>
-    <line x1="100" y1="100" x2="100" y2="94" stroke="#FF6B35" stroke-width="2"/>
-    <circle cx="100" cy="93" r="2.5" fill="#00E5FF"/>
+    <!-- Center 3D Blue Chatbot Visual -->
+    <circle cx="100" cy="125" r="32" fill="#0284C7" filter="url(#tkGlow)"/>
+    <circle cx="100" cy="125" r="28" fill="#38BDF8"/>
+    <!-- Bot Head Visor -->
+    <rect x="84" y="112" width="32" height="20" rx="8" fill="#0f172a" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- Glowing Blue Eyes -->
+    <circle cx="93" cy="122" r="3" fill="#38BDF8"/>
+    <circle cx="107" cy="122" r="3" fill="#38BDF8"/>
+    <!-- Speech bubble pointer -->
+    <path d="M115 145 L130 158 L122 143 Z" fill="#38BDF8"/>
+
+    <!-- Floating Metric Chips -->
+    <rect x="25" y="22" width="70" height="22" rx="6" fill="#0f1a2e" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+    <text x="35" y="37" fill="#38BDF8" font-family="Inter, sans-serif" font-size="9.5" font-weight="700">NLP Engine</text>
+
+    <rect x="110" y="215" width="80" height="22" rx="6" fill="#1b1525" stroke="rgba(255,107,53,0.4)" stroke-width="1"/>
+    <text x="120" y="230" fill="#FFA26B" font-family="Inter, sans-serif" font-size="9.5" font-weight="700">98.4% Acc</text>
   </g>
 
-  <!-- Right: Chatbot Dialogue Window Mockup -->
-  <g transform="translate(280, 45)">
-    <!-- Window Frame -->
-    <rect width="270" height="250" rx="14" fill="#0b1322" stroke="rgba(255, 107, 53, 0.3)" stroke-width="1.5"/>
-    <!-- Window Header -->
-    <rect width="270" height="38" rx="14" fill="rgba(255, 255, 255, 0.03)"/>
-    <circle cx="20" cy="19" r="4" fill="#EF4444"/>
-    <circle cx="32" cy="19" r="4" fill="#F59E0B"/>
-    <circle cx="44" cy="19" r="4" fill="#10B981"/>
-    <text x="60" y="23" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" font-weight="600">Thinkora AI • Online</text>
-    <circle cx="175" cy="19" r="3" fill="#10B981"/>
+  <!-- Right: Modern AI Chatbot UI Mockup -->
+  <g transform="translate(255, 30)">
+    <rect width="315" height="280" rx="14" fill="#0d1527" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
+    
+    <!-- Chat Header -->
+    <rect width="315" height="42" rx="14" fill="#131e35"/>
+    <circle cx="22" cy="21" r="4.5" fill="#EF4444"/>
+    <circle cx="36" cy="21" r="4.5" fill="#F59E0B"/>
+    <circle cx="50" cy="21" r="4.5" fill="#10B981"/>
+    <text x="70" y="26" fill="#F1F5F9" font-family="Inter, sans-serif" font-size="12" font-weight="700">Thinkora AI • Assistant</text>
+    <circle cx="280" cy="21" r="3.5" fill="#10B981"/>
+    <text x="290" y="25" fill="#10B981" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">Online</text>
 
-    <!-- User Chat Bubble (Right) -->
-    <rect x="70" y="55" width="185" height="42" rx="10" fill="#1e293b"/>
-    <text x="82" y="73" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="11">How can NLP help learning?</text>
-    <text x="82" y="88" fill="#64748B" font-family="Inter, sans-serif" font-size="9">10:42 AM</text>
+    <!-- User Query Bubble -->
+    <g transform="translate(100, 56)">
+      <rect width="195" height="44" rx="12" fill="#1e293b" stroke="rgba(255,255,255,0.08)"/>
+      <text x="14" y="20" fill="#F1F5F9" font-family="Inter, sans-serif" font-size="11" font-weight="600">How can NLP help learning?</text>
+      <text x="14" y="34" fill="#64748B" font-family="Inter, sans-serif" font-size="9">10:42 AM • User</text>
+    </g>
 
-    <!-- Bot Chat Bubble (Left) with Orange Accent -->
-    <rect x="15" y="110" width="240" height="78" rx="10" fill="rgba(255, 107, 53, 0.12)" stroke="rgba(255, 107, 53, 0.3)" stroke-width="1"/>
-    <text x="28" y="130" fill="#FF9268" font-family="Inter, sans-serif" font-size="10" font-weight="700">🤖 Thinkora Assistant</text>
-    <text x="28" y="148" fill="#F1F5F9" font-family="Inter, sans-serif" font-size="10.5">By combining semantic retrieval</text>
-    <text x="28" y="164" fill="#F1F5F9" font-family="Inter, sans-serif" font-size="10.5">with fast response synthesis!</text>
-    <text x="28" y="180" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5">Accuracy: 98.4% • Latency: 120ms</text>
+    <!-- AI Bot Response Bubble -->
+    <g transform="translate(20, 112)">
+      <rect width="275" height="96" rx="12" fill="#162238" stroke="rgba(56, 189, 248, 0.35)"/>
+      <!-- Header with mini bot icon -->
+      <circle cx="24" cy="22" r="10" fill="#0284C7"/>
+      <circle cx="24" cy="22" r="4" fill="#FFFFFF"/>
+      <text x="42" y="26" fill="#38BDF8" font-family="Inter, sans-serif" font-size="11" font-weight="700">Thinkora AI Bot</text>
+      <text x="210" y="25" fill="#FFA26B" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">⚡ 120ms</text>
 
-    <!-- Interactive Input Bar -->
-    <rect x="15" y="200" width="240" height="36" rx="18" fill="#151e30" stroke="rgba(255, 255, 255, 0.1)"/>
-    <text x="32" y="222" fill="#64748B" font-family="Inter, sans-serif" font-size="11">Type your question...</text>
-    <circle cx="235" cy="218" r="12" fill="url(#tkOrange)"/>
-    <path d="M232 214 L239 218 L232 222 Z" fill="#081021"/>
+      <text x="18" y="50" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="10.5">By combining semantic retrieval with fast</text>
+      <text x="18" y="66" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="10.5">response synthesis and adaptive memory!</text>
+      
+      <!-- Tags -->
+      <rect x="18" y="74" width="76" height="15" rx="4" fill="rgba(56,189,248,0.15)"/>
+      <text x="24" y="85" fill="#38BDF8" font-family="Inter, sans-serif" font-size="8.5" font-weight="700">Retrieval NLP</text>
+
+      <rect x="100" y="74" width="60" height="15" rx="4" fill="rgba(255,107,53,0.15)"/>
+      <text x="106" y="85" fill="#FF9268" font-family="Inter, sans-serif" font-size="8.5" font-weight="700">Flask API</text>
+    </g>
+
+    <!-- Input Bar Mockup -->
+    <g transform="translate(20, 222)">
+      <rect width="275" height="42" rx="10" fill="#10192b" stroke="rgba(255,255,255,0.12)"/>
+      <text x="16" y="26" fill="#64748B" font-family="Inter, sans-serif" font-size="11">Type your question...</text>
+      <rect x="235" y="7" width="28" height="28" rx="8" fill="url(#tkOrange)"/>
+      <polygon points="246,16 256,21 246,26" fill="#FFFFFF"/>
+    </g>
   </g>
 </svg>

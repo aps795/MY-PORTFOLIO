@@ -112,14 +112,11 @@ body{
 
 .eyebrow{color:var(--muted);margin:0 0 8px}
 .headline{font-size:2.35rem;margin:0 0 12px;line-height:1.25}
-.headline-name{
-  color:var(--accent);
-  background:linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  font-size:1.06em;
-  font-weight:800;
+.headline-name, span.headline-name{
+  color:#FF6B35 !important;
+  font-size:1.15em !important;
+  font-weight:800 !important;
+  display:inline-block;
 }
 .subhead{color:var(--muted);margin-bottom:18px;font-size:1.05rem;line-height:1.6}
 .hero-ctas{display:flex;gap:12px;margin-bottom:18px}

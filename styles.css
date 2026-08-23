@@ -1,4 +1,4 @@
-﻿/* Consolidated stylesheet for APS portfolio — styles.css
+/* Consolidated stylesheet for APS portfolio — styles.css
    Implements: responsive layout, profile image styling, cards, timeline,
    projects, certificates, contact form, back-to-top, theme variables, and accessibility.
 */
@@ -159,7 +159,7 @@ body{
   display:block;
   border-radius:50%;
   object-fit:cover;
-  object-position:center;
+  object-position:center 12%;
   border:3px solid rgba(255,255,255,0.1);
   transition:transform var(--transition) ease, filter var(--transition) ease;
   filter:brightness(1.05) saturate(1.1);
@@ -222,7 +222,7 @@ body{
 
 /* About */
 .about-inner{display:flex;gap:32px;align-items:center}
-.about-media img.about-photo{width:260px;border-radius:16px;object-fit:cover;border:1px solid rgba(255,107,53,0.25)}
+.about-media img.about-photo{width:260px;height:320px;border-radius:16px;object-fit:cover;object-position:center 12%;border:1px solid rgba(255,107,53,0.25)}
 .about-content{flex:1}
 .about-content .bio{color:var(--muted);font-size:1.02rem;line-height:1.6;margin-bottom:18px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 24px}

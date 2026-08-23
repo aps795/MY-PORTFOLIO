@@ -1,0 +1,37 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="isroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1226" />
+      <stop offset="50%" stop-color="#071b30" />
+      <stop offset="100%" stop-color="#020814" />
+    </linearGradient>
+    <linearGradient id="isroGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB300" />
+      <stop offset="100%" stop-color="#FF6B35" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="220" rx="12" fill="url(#isroBg)"/>
+  <rect x="8" y="8" width="344" height="204" rx="8" fill="none" stroke="rgba(255, 107, 53, 0.4)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <path d="M14 26 L14 14 L26 14" fill="none" stroke="#FF6B35" stroke-width="2.5"/>
+  <path d="M346 26 L346 14 L334 14" fill="none" stroke="#FF6B35" stroke-width="2.5"/>
+  <path d="M14 194 L14 206 L26 206" fill="none" stroke="#FF6B35" stroke-width="2.5"/>
+  <path d="M346 194 L346 206 L334 206" fill="none" stroke="#FF6B35" stroke-width="2.5"/>
+  <path d="M40 180 Q180 40 320 180" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="2"/>
+  <circle cx="270" cy="115" r="4" fill="#38BDF8"/>
+  <g transform="translate(180, 52)">
+    <circle cx="0" cy="0" r="28" fill="rgba(255, 107, 53, 0.15)" stroke="url(#isroGold)" stroke-width="2"/>
+    <path d="M0 -16 L8 0 L4 12 L-4 12 L-8 0 Z" fill="url(#isroGold)"/>
+    <path d="M-8 6 L-13 14 L-6 13 Z" fill="#FF6B35"/>
+    <path d="M8 6 L13 14 L6 13 Z" fill="#FF6B35"/>
+    <circle cx="0" cy="-2" r="2.5" fill="#081021"/>
+    <path d="M-3 12 Q0 20 3 12 Z" fill="#FFA26B"/>
+  </g>
+  <text x="180" y="98" fill="#38BDF8" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">ISRO</text>
+  <text x="180" y="112" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Indian Space Research Organisation</text>
+  <text x="180" y="136" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">Bharatiya Antariksh Hackathon 2026</text>
+  <g transform="translate(180, 162)">
+    <rect x="-55" y="-10" width="110" height="20" rx="10" fill="rgba(255, 107, 53, 0.15)" stroke="rgba(255, 107, 53, 0.4)" stroke-width="1"/>
+    <text x="0" y="4" fill="#FFA26B" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Hackathon 2026</text>
+  </g>
+  <text x="180" y="195" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Artificial Intelligence (AI) • Machine Learning</text>
+</svg>

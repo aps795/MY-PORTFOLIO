@@ -1,0 +1,27 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hrBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#092019" />
+      <stop offset="50%" stop-color="#0b1724" />
+      <stop offset="100%" stop-color="#050e17" />
+    </linearGradient>
+    <linearGradient id="hrGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00EA64" />
+      <stop offset="100%" stop-color="#00B0FF" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="220" rx="12" fill="url(#hrBg)"/>
+  <rect x="8" y="8" width="344" height="204" rx="8" fill="none" stroke="rgba(0, 234, 100, 0.35)" stroke-width="1.5"/>
+  <g transform="translate(180, 50)">
+    <rect x="-24" y="-24" width="48" height="48" rx="12" fill="rgba(0, 234, 100, 0.12)" stroke="url(#hrGreen)" stroke-width="2"/>
+    <text x="0" y="10" fill="#00EA64" font-family="Inter, sans-serif" font-size="28" font-weight="900" text-anchor="middle">[H]</text>
+  </g>
+  <text x="180" y="96" fill="#00EA64" font-family="Inter, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">HACKERRANK</text>
+  <text x="180" y="110" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Skill Assessment</text>
+  <text x="180" y="134" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Problem Solving</text>
+  <g transform="translate(180, 160)">
+    <rect x="-50" y="-10" width="100" height="20" rx="10" fill="rgba(0, 234, 100, 0.15)" stroke="rgba(0, 234, 100, 0.4)" stroke-width="1"/>
+    <text x="0" y="4" fill="#00EA64" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Skill Certificate</text>
+  </g>
+  <text x="180" y="195" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Basic Skill • C • Programming Language</text>
+</svg>

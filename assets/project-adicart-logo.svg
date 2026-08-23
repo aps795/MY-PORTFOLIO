@@ -1,0 +1,50 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="adicartBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#192231" />
+      <stop offset="50%" stop-color="#101827" />
+      <stop offset="100%" stop-color="#0b1020" />
+    </linearGradient>
+    <linearGradient id="adicartOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35" />
+      <stop offset="100%" stop-color="#FFA26B" />
+    </linearGradient>
+    <linearGradient id="adicartGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F5D4" />
+      <stop offset="100%" stop-color="#00BBF9" />
+    </linearGradient>
+    <filter id="cartGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded box -->
+  <rect width="120" height="120" rx="26" fill="url(#adicartBg)" stroke="rgba(255, 107, 53, 0.35)" stroke-width="2"/>
+
+  <!-- Speed circles in background -->
+  <circle cx="60" cy="60" r="40" fill="none" stroke="rgba(0, 245, 212, 0.08)" stroke-width="1.5" />
+  
+  <!-- Shopping Bag / Cart Body Hybrid -->
+  <path d="M42 42 L78 42 L84 72 C84 76 81 79 77 79 L43 79 C39 79 36 76 36 72 Z" 
+        fill="rgba(255, 107, 53, 0.12)" stroke="url(#adicartOrange)" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Shopping Bag Handle -->
+  <path d="M50 42 C50 30 70 30 70 42" fill="none" stroke="url(#adicartOrange)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Dynamic Cart Basket Grid / Speed Lines -->
+  <line x1="42" y1="54" x2="78" y2="54" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="44" y1="66" x2="76" y2="66" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- Add to Cart / Success Plus / Checkout Arrow -->
+  <g transform="translate(60, 60)" filter="url(#cartGlow)">
+    <circle cx="0" cy="0" r="11" fill="url(#adicartGreen)"/>
+    <path d="M-4 0 L4 0 M0 -4 L0 4" stroke="#081021" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Cart Wheels -->
+  <circle cx="46" cy="87" r="5" fill="#FFA26B" stroke="url(#adicartOrange)" stroke-width="2" filter="url(#cartGlow)"/>
+  <circle cx="74" cy="87" r="5" fill="#FFA26B" stroke="url(#adicartOrange)" stroke-width="2" filter="url(#cartGlow)"/>
+  <circle cx="46" cy="87" r="2" fill="#081021"/>
+  <circle cx="74" cy="87" r="2" fill="#081021"/>
+</svg>

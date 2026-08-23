@@ -1,0 +1,29 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="internBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18132e" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0a0f1d" />
+    </linearGradient>
+    <linearGradient id="internPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#FF6B35" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="220" rx="12" fill="url(#internBg)"/>
+  <rect x="8" y="8" width="344" height="204" rx="8" fill="none" stroke="rgba(168, 85, 247, 0.35)" stroke-width="1.5"/>
+  <g transform="translate(180, 50)">
+    <circle cx="0" cy="0" r="26" fill="rgba(168, 85, 247, 0.15)" stroke="url(#internPurple)" stroke-width="2"/>
+    <rect x="-12" y="-6" width="24" height="18" rx="3" fill="#A855F7"/>
+    <path d="M-6 -6 C-6 -11 6 -11 6 -6" fill="none" stroke="#FFA26B" stroke-width="2"/>
+    <line x1="-12" y1="2" x2="12" y2="2" stroke="#FFFFFF" stroke-width="1.5"/>
+  </g>
+  <text x="180" y="95" fill="#C084FC" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle">CODTECH TECHNOLOGIES</text>
+  <text x="180" y="110" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Internship Certificate</text>
+  <text x="180" y="134" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Artificial Intelligence Intern</text>
+  <g transform="translate(180, 160)">
+    <rect x="-55" y="-10" width="110" height="20" rx="10" fill="rgba(255, 107, 53, 0.15)" stroke="rgba(255, 107, 53, 0.4)" stroke-width="1"/>
+    <text x="0" y="4" fill="#FFA26B" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Internship Experience</text>
+  </g>
+  <text x="180" y="195" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Artificial Intelligence • Python • ML</text>
+</svg>

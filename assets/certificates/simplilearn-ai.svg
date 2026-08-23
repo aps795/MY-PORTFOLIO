@@ -1,0 +1,32 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="slAiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1430" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#080c18" />
+    </linearGradient>
+    <linearGradient id="slAiAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="220" rx="12" fill="url(#slAiBg)"/>
+  <rect x="8" y="8" width="344" height="204" rx="8" fill="none" stroke="rgba(139, 92, 246, 0.35)" stroke-width="1.5"/>
+  <g transform="translate(180, 50)">
+    <circle cx="0" cy="0" r="26" fill="rgba(139, 92, 246, 0.15)" stroke="url(#slAiAccent)" stroke-width="2"/>
+    <circle cx="-6" cy="-4" r="3.5" fill="#8B5CF6"/>
+    <circle cx="6" cy="-4" r="3.5" fill="#8B5CF6"/>
+    <circle cx="0" cy="8" r="4" fill="#38BDF8"/>
+    <line x1="-6" y1="-4" x2="0" y2="8" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="6" y1="-4" x2="0" y2="8" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="-6" y1="-4" x2="6" y2="-4" stroke="#FFA26B" stroke-width="1.5"/>
+  </g>
+  <text x="180" y="95" fill="#A78BFA" font-family="Inter, sans-serif" font-size="11.5" font-weight="700" text-anchor="middle">SIMPLILEARN</text>
+  <text x="180" y="110" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Course Certificate</text>
+  <text x="180" y="134" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">Introduction to Artificial Intelligence</text>
+  <g transform="translate(180, 160)">
+    <rect x="-50" y="-10" width="100" height="20" rx="10" fill="rgba(139, 92, 246, 0.15)" stroke="rgba(139, 92, 246, 0.4)" stroke-width="1"/>
+    <text x="0" y="4" fill="#C084FC" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Course Completion</text>
+  </g>
+  <text x="180" y="195" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Skills: Artificial Intelligence (AI) • Data Science</text>
+</svg>

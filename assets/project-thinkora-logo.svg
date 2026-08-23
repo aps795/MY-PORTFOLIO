@@ -1,0 +1,40 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="thinkoraBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1333" />
+      <stop offset="50%" stop-color="#141c2e" />
+      <stop offset="100%" stop-color="#0b1020" />
+    </linearGradient>
+    <linearGradient id="thinkoraAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35" />
+      <stop offset="100%" stop-color="#FFA26B" />
+    </linearGradient>
+    <linearGradient id="thinkoraCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#7C4DFF" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="120" height="120" rx="26" fill="url(#thinkoraBg)" stroke="rgba(255, 107, 53, 0.35)" stroke-width="2"/>
+  <circle cx="60" cy="56" r="38" fill="none" stroke="rgba(255, 107, 53, 0.12)" stroke-dasharray="4 4" />
+  <path d="M34 38 C34 30 42 24 60 24 C78 24 86 30 86 38 C86 46 80 52 68 52 C65 52 61 54 53 58 C55 54 56 52 53 52 C39 52 34 46 34 38 Z" 
+        fill="none" stroke="url(#thinkoraAccent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+  <line x1="44" y1="62" x2="60" y2="48" stroke="url(#thinkoraCyan)" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  <line x1="76" y1="62" x2="60" y2="48" stroke="url(#thinkoraCyan)" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  <line x1="44" y1="62" x2="60" y2="76" stroke="url(#thinkoraAccent)" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="76" y1="62" x2="60" y2="76" stroke="url(#thinkoraAccent)" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="60" y1="48" x2="60" y2="76" stroke="url(#thinkoraAccent)" stroke-width="2" stroke-dasharray="2 3" opacity="0.9"/>
+  <line x1="38" y1="78" x2="44" y2="62" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  <line x1="82" y1="78" x2="76" y2="62" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  <circle cx="60" cy="48" r="4.5" fill="#FFFFFF" filter="url(#glow)"/>
+  <circle cx="44" cy="62" r="5" fill="#00E5FF" filter="url(#glow)"/>
+  <circle cx="76" cy="62" r="5" fill="#00E5FF" filter="url(#glow)"/>
+  <circle cx="60" cy="76" r="6" fill="#FF6B35" filter="url(#glow)"/>
+  <circle cx="38" cy="78" r="3" fill="#FFA26B"/>
+  <circle cx="82" cy="78" r="3" fill="#FFA26B"/>
+  <circle cx="52" cy="55" r="1.5" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="68" cy="55" r="1.5" fill="#FFFFFF" opacity="0.9"/>
+</svg>

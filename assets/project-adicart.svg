@@ -1,0 +1,95 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="acGradBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#0d1f2d" />
+      <stop offset="100%" stop-color="#080e18" />
+    </linearGradient>
+    <linearGradient id="acOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35" />
+      <stop offset="100%" stop-color="#FFA26B" />
+    </linearGradient>
+    <linearGradient id="acEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <filter id="acGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#acGradBg)"/>
+
+  <!-- Subtle Retail Dots Pattern -->
+  <g opacity="0.07" fill="#ffffff">
+    <circle cx="50" cy="50" r="2"/><circle cx="100" cy="50" r="2"/><circle cx="150" cy="50" r="2"/><circle cx="200" cy="50" r="2"/>
+    <circle cx="50" cy="100" r="2"/><circle cx="100" cy="100" r="2"/><circle cx="150" cy="100" r="2"/><circle cx="200" cy="100" r="2"/>
+    <circle cx="50" cy="150" r="2"/><circle cx="100" cy="150" r="2"/><circle cx="150" cy="150" r="2"/><circle cx="200" cy="150" r="2"/>
+    <circle cx="50" cy="200" r="2"/><circle cx="100" cy="200" r="2"/><circle cx="150" cy="200" r="2"/><circle cx="200" cy="200" r="2"/>
+  </g>
+
+  <!-- Left: Product Card Showcase -->
+  <g transform="translate(45, 40)">
+    <rect width="230" height="260" rx="14" fill="#131e33" stroke="rgba(255, 107, 53, 0.25)" stroke-width="1.5"/>
+    <!-- Product image area -->
+    <rect x="15" y="15" width="200" height="110" rx="10" fill="rgba(255, 107, 53, 0.08)"/>
+    <circle cx="115" cy="70" r="35" fill="rgba(255, 107, 53, 0.15)"/>
+    <!-- Shopping bag vector in card -->
+    <path d="M100 60 L130 60 L135 85 L95 85 Z" fill="none" stroke="url(#acOrange)" stroke-width="2.5"/>
+    <path d="M107 60 C107 50 123 50 123 60" fill="none" stroke="url(#acOrange)" stroke-width="2.5"/>
+    <rect x="25" y="25" width="48" height="18" rx="6" fill="#FF6B35"/>
+    <text x="31" y="38" fill="#081021" font-family="Inter, sans-serif" font-size="9" font-weight="700">NEW IN</text>
+
+    <!-- Product details -->
+    <text x="18" y="148" fill="#F1F5F9" font-family="Inter, sans-serif" font-size="13" font-weight="700">Smart Gadget Edition</text>
+    <text x="18" y="166" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10.5">Seamless cart checkout flow</text>
+    
+    <text x="18" y="194" fill="#FFA26B" font-family="Inter, sans-serif" font-size="15" font-weight="700">$149.00</text>
+    <text x="85" y="194" fill="#64748B" font-family="Inter, sans-serif" font-size="11" text-decoration="line-through">$199.00</text>
+
+    <!-- Add to Cart CTA -->
+    <rect x="15" y="212" width="200" height="34" rx="8" fill="url(#acOrange)"/>
+    <text x="75" y="233" fill="#081021" font-family="Inter, sans-serif" font-size="11.5" font-weight="700">🛒 Add to Cart</text>
+  </g>
+
+  <!-- Right: Cart Flow / Summary Drawer -->
+  <g transform="translate(305, 40)">
+    <rect width="250" height="260" rx="14" fill="#0d1527" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1.5"/>
+    <!-- Header -->
+    <text x="20" y="32" fill="#F1F5F9" font-family="Inter, sans-serif" font-size="13" font-weight="700">Shopping Cart (3 items)</text>
+    <circle cx="225" cy="27" r="10" fill="rgba(16, 185, 129, 0.2)"/>
+    <text x="222" y="31" fill="#10B981" font-family="Inter, sans-serif" font-size="11" font-weight="700">✓</text>
+    <line x1="20" y1="46" x2="230" y2="46" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+    <!-- Cart Item 1 -->
+    <rect x="20" y="58" width="36" height="36" rx="8" fill="rgba(255, 107, 53, 0.15)"/>
+    <text x="29" y="81" font-size="16">🎧</text>
+    <text x="66" y="72" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="11" font-weight="600">Wireless Audio</text>
+    <text x="66" y="87" fill="#10B981" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">$89.00</text>
+    <text x="195" y="78" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11">Qty: 1</text>
+
+    <!-- Cart Item 2 -->
+    <rect x="20" y="104" width="36" height="36" rx="8" fill="rgba(6, 182, 212, 0.15)"/>
+    <text x="29" y="127" font-size="16">⌚</text>
+    <text x="66" y="118" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="11" font-weight="600">FitPulse Watch</text>
+    <text x="66" y="133" fill="#10B981" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">$60.00</text>
+    <text x="195" y="124" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11">Qty: 1</text>
+
+    <line x1="20" y1="152" x2="230" y2="152" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+    <!-- Order summary metrics -->
+    <text x="20" y="174" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10.5">Subtotal</text>
+    <text x="190" y="174" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="10.5">$149.00</text>
+
+    <text x="20" y="194" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10.5">Discount (PROMO)</text>
+    <text x="195" y="194" fill="#10B981" font-family="Inter, sans-serif" font-size="10.5">-$20.00</text>
+
+    <text x="20" y="218" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Total Order</text>
+    <text x="180" y="218" fill="#FFA26B" font-family="Inter, sans-serif" font-size="13" font-weight="700">$129.00</text>
+
+    <!-- Checkout Button -->
+    <rect x="20" y="228" width="210" height="24" rx="6" fill="url(#acEmerald)"/>
+    <text x="90" y="244" fill="#081021" font-family="Inter, sans-serif" font-size="10.5" font-weight="700">Checkout ➔</text>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="iacBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14192b" />
+      <stop offset="50%" stop-color="#0e1628" />
+      <stop offset="100%" stop-color="#080d1a" />
+    </linearGradient>
+    <linearGradient id="iacAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35" />
+      <stop offset="100%" stop-color="#FF9E44" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="220" rx="12" fill="url(#iacBg)"/>
+  <rect x="8" y="8" width="344" height="204" rx="8" fill="none" stroke="rgba(255, 107, 53, 0.35)" stroke-width="1.5"/>
+  <g transform="translate(180, 50)">
+    <circle cx="0" cy="0" r="26" fill="rgba(255, 107, 53, 0.12)" stroke="url(#iacAccent)" stroke-width="2"/>
+    <circle cx="0" cy="0" r="21" fill="none" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3 3"/>
+    <rect x="-10" y="-10" width="20" height="20" rx="4" fill="#FF6B35"/>
+    <circle cx="0" cy="0" r="4" fill="#FFFFFF"/>
+    <line x1="-10" y1="-5" x2="-14" y2="-5" stroke="#FFA26B" stroke-width="2"/>
+    <line x1="-10" y1="5" x2="-14" y2="5" stroke="#FFA26B" stroke-width="2"/>
+    <line x1="10" y1="-5" x2="14" y2="-5" stroke="#FFA26B" stroke-width="2"/>
+    <line x1="10" y1="5" x2="14" y2="5" stroke="#FFA26B" stroke-width="2"/>
+  </g>
+  <text x="180" y="95" fill="#FFA26B" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">IAC &amp; CODTECH TECHNOLOGIES</text>
+  <text x="180" y="110" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Certificate of Completion</text>
+  <text x="180" y="134" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Artificial Intelligence Training Program</text>
+  <g transform="translate(180, 160)">
+    <rect x="-50" y="-10" width="100" height="20" rx="10" fill="rgba(16, 185, 129, 0.12)" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1"/>
+    <text x="0" y="4" fill="#34D399" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Training Program</text>
+  </g>
+  <text x="180" y="195" fill="#94A3B8" font-family="Inter, sans-serif" font-size="8.5" text-anchor="middle">Artificial Intelligence • Machine Learning</text>
+</svg>

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <header class="site-header">
@@ -608,11 +608,32 @@
           <p>GitHub: <a href="https://github.com/aps795" target="_blank" rel="noopener">aps795</a></p>
         </div>
 
-        <form class="contact-form" action="#" method="post" onsubmit="alert('Replace with working form handler'); return false;">
-          <label><span>Name</span><input name="name" required></label>
-          <label><span>Email</span><input type="email" name="email" required></label>
-          <label><span>Message</span><textarea name="message" rows="5" required></textarea></label>
-          <button class="btn btn-cta" type="submit">Send Message</button>
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/abhishekpratapsingh795@gmail.com" method="POST">
+          <!-- FormSubmit configuration -->
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="New Portfolio Message from Visitor!">
+          <input type="hidden" name="_template" value="table">
+
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" id="form-name" placeholder="Your full name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" id="form-email" placeholder="Your email address" required>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" id="form-message" rows="5" placeholder="Write your message or inquiry here..." required></textarea>
+          </label>
+
+          <div class="form-status" id="form-status" role="alert" aria-live="polite" style="display:none;"></div>
+
+          <button class="btn btn-cta" type="submit" id="form-submit-btn">
+            <span id="btn-text">Send Message</span>
+            <span id="btn-spinner" style="display:none;">⏳ Sending...</span>
+          </button>
         </form>
       </div>
     </section>
@@ -627,6 +648,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

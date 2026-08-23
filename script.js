@@ -1,4 +1,4 @@
-﻿// Interactions: mobile menu, theme toggle, active nav, portfolio filters, back-to-top, scroll animations
+// Interactions: mobile menu, theme toggle, active nav, portfolio filters, back-to-top, scroll animations
 // Lightweight, performant, and accessible
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -183,6 +183,68 @@ document.addEventListener('DOMContentLoaded', function () {
     animateElements('.skill-card', 0.2, 0.08);
     animateElements('.cert-card', 0.15, 0.06);
     animateElements('.service-card', 0.2, 0.08);
+  }
+
+  // Contact Form AJAX Handler (FormSubmit.co -> abhishekpratapsingh795@gmail.com)
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  const submitBtn = document.getElementById('form-submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const btnSpinner = document.getElementById('btn-spinner');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('form-name') ? document.getElementById('form-name').value.trim() : '';
+      const email = document.getElementById('form-email') ? document.getElementById('form-email').value.trim() : '';
+      const message = document.getElementById('form-message') ? document.getElementById('form-message').value.trim() : '';
+
+      if (!name || !email || !message) {
+        showStatus('Please fill in all fields before sending.', 'error');
+        return;
+      }
+
+      // Set loading state
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnText) btnText.style.display = 'none';
+      if (btnSpinner) btnSpinner.style.display = 'inline';
+      if (formStatus) formStatus.style.display = 'none';
+
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch('https://formsubmit.co/ajax/abhishekpratapsingh795@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          showStatus(`✅ Thank you, ${name}! Your message has been sent successfully to Abhishek's email. You will receive a reply soon!`, 'success');
+          contactForm.reset();
+        } else {
+          const data = await response.json().catch(() => null);
+          const errorMsg = data && data.message ? data.message : 'Unable to send message right now. Please email directly at abhishekpratapsingh795@gmail.com';
+          showStatus(`⚠️ ${errorMsg}`, 'error');
+        }
+      } catch (err) {
+        // Fallback: submit form natively
+        contactForm.submit();
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+        if (btnText) btnText.style.display = 'inline';
+        if (btnSpinner) btnSpinner.style.display = 'none';
+      }
+    });
+
+    function showStatus(text, type) {
+      if (!formStatus) return;
+      formStatus.className = `form-status ${type}`;
+      formStatus.textContent = text;
+      formStatus.style.display = 'block';
+    }
   }
 
   // Add fadeInUp animation keyframe dynamically

@@ -125,9 +125,52 @@ body{
 .stats li strong{display:block;color:var(--accent);font-size:1.1rem}
 .stats li span{font-size:0.8rem;color:var(--muted)}
 
-.socials{display:flex;gap:14px}
-.socials a{color:var(--muted);text-decoration:none;font-weight:600;transition:color var(--transition)}
-.socials a:hover{color:var(--accent)}
+.socials{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:6px;
+  flex-wrap:wrap;
+}
+.social-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:7px 16px;
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.12);
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.92rem;
+  transition:all var(--transition);
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  backdrop-filter:blur(6px);
+}
+.social-icon-img{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  box-shadow:0 2px 8px rgba(0,0,0,0.35);
+}
+.social-badge:hover{
+  transform:translateY(-3px);
+}
+.social-badge.linkedin-badge:hover{
+  background:rgba(10, 102, 194, 0.18);
+  border-color:#0A66C2;
+  box-shadow:0 8px 24px rgba(10, 102, 194, 0.4);
+  color:#FFFFFF;
+}
+.social-badge.github-badge:hover{
+  background:rgba(56, 189, 248, 0.18);
+  border-color:#38BDF8;
+  box-shadow:0 8px 24px rgba(56, 189, 248, 0.4);
+  color:#FFFFFF;
+}
 
 /* Profile photo */
 .hero-media{width:380px;flex:0 0 380px;display:flex;align-items:center;justify-content:center}

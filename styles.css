@@ -347,7 +347,7 @@ body{
 
 /* Circular charts */
 .circular-chart{width:78px;height:78px;display:block;margin:0 auto}
-.circular-chart .circle-bg{fill:none;stroke:#2b3440;stroke-width:3.5}
+.circular-chart .circle-bg{fill:none;stroke:rgba(255, 107, 53, 0.22);stroke-width:3.5}
 .circular-chart .circle{
   fill:none;
   stroke:#FF6B35;
@@ -358,8 +358,8 @@ body{
   stroke-dasharray:0,100;
 }
 .circular-chart .percent{
-  font-size:6px;
-  fill:var(--text);
+  font-size:6.2px;
+  fill:#FF6B35;
   text-anchor:middle;
   font-weight:700;
 }
@@ -1275,6 +1275,14 @@ html[data-theme='light'] .skill-tag:hover{
   background: rgba(234, 88, 12, 0.1);
   border-color: #ea580c;
   color: #ea580c;
+}
+
+html[data-theme='light'] .circular-chart .circle-bg{
+  stroke: rgba(234, 88, 12, 0.18);
+}
+
+html[data-theme='light'] .circular-chart .percent{
+  fill: #ea580c;
 }
 
 html[data-theme='light'] .filter-btn{

@@ -883,7 +883,7 @@ button:disabled, .btn:disabled{
 /* Achievements & Coding Profiles */
 .achieve-grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
   gap:22px;
   margin-top:20px;
 }
@@ -921,6 +921,11 @@ button:disabled, .btn:disabled{
   box-shadow:0 12px 28px rgba(255,107,53,0.25);
 }
 
+.achieve-card.codeforces-card:hover{
+  border-color:#188CE5;
+  box-shadow:0 12px 28px rgba(24,140,229,0.25);
+}
+
 .achieve-card-head{
   display:flex;
   align-items:center;
@@ -935,6 +940,12 @@ button:disabled, .btn:disabled{
   object-fit:cover;
   display:block;
   box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.achieve-icon-img.codeforces-icon{
+  background:#ffffff;
+  object-fit:contain;
+  padding:4px;
 }
 
 .achieve-title{
@@ -1002,6 +1013,13 @@ button:disabled, .btn:disabled{
   border-color:#FF6B35;
   color:#FFFFFF;
   box-shadow:0 4px 16px rgba(255,107,53,0.3);
+}
+
+.achieve-link-btn.cf-btn:hover{
+  background:rgba(24, 140, 229, 0.15);
+  border-color:#188CE5;
+  color:#FFFFFF;
+  box-shadow:0 4px 16px rgba(24,140,229,0.3);
 }
 
 .social-badge.tuf-badge:hover{
@@ -1434,6 +1452,12 @@ html[data-theme='light'] .achieve-link-btn.tuf-btn:hover{
   background: rgba(255, 107, 53, 0.12);
   border-color: #EA580C;
   color: #c2410c;
+}
+
+html[data-theme='light'] .achieve-link-btn.cf-btn:hover{
+  background: rgba(24, 140, 229, 0.12);
+  border-color: #188CE5;
+  color: #1d4ed8;
 }
 
 html[data-theme='light'] .social-badge.tuf-badge:hover{

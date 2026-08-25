@@ -120,9 +120,10 @@ body{
 .headline{font-size:2.35rem;margin:0 0 12px;line-height:1.25}
 .headline-name, span.headline-name{
   color:#FF6B35 !important;
-  font-size:1.15em !important;
+  font-size:1.4em !important;
   font-weight:800 !important;
   display:inline-block;
+  letter-spacing:-0.5px;
 }
 .subhead{color:var(--muted);margin-bottom:18px;font-size:1.05rem;line-height:1.6}
 .hero-ctas{display:flex;gap:12px;margin-bottom:18px}

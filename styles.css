@@ -793,6 +793,30 @@ body{
   color:var(--accent);
 }
 
+.cert-card.cert-card-linkedin:hover{
+  border-color:#0A66C2;
+  box-shadow:0 14px 32px rgba(10, 102, 194, 0.28);
+}
+
+.cert-org-linkedin{
+  background:rgba(10, 102, 194, 0.15) !important;
+  color:#38BDF8 !important;
+  border-color:rgba(10, 102, 194, 0.35) !important;
+}
+
+.cert-btn-linkedin{
+  background:linear-gradient(135deg, #0A66C2, #0077B5) !important;
+  border-color:#0A66C2 !important;
+  color:#FFFFFF !important;
+  font-weight:600;
+}
+
+.cert-btn-linkedin:hover{
+  background:linear-gradient(135deg, #0077B5, #0A66C2) !important;
+  box-shadow:0 4px 14px rgba(10, 102, 194, 0.45) !important;
+  transform:translateY(-2px);
+}
+
 /* Education & Achievements */
 .edu-grid{display:grid;grid-template-columns:1fr;gap:16px}
 .edu-card{
@@ -1363,6 +1387,17 @@ html[data-theme='light'] .cert-card{
 html[data-theme='light'] .cert-card:hover{
   border-color: rgba(234, 88, 12, 0.45);
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+}
+
+html[data-theme='light'] .cert-card.cert-card-linkedin:hover{
+  border-color: #0A66C2;
+  box-shadow: 0 12px 28px rgba(10, 102, 194, 0.18);
+}
+
+html[data-theme='light'] .cert-org-linkedin{
+  background: rgba(10, 102, 194, 0.1) !important;
+  color: #0A66C2 !important;
+  border-color: rgba(10, 102, 194, 0.3) !important;
 }
 
 html[data-theme='light'] .cert-org{

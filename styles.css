@@ -877,7 +877,7 @@ button:disabled, .btn:disabled{
 /* Achievements & Coding Profiles */
 .achieve-grid{
   display:grid;
-  grid-template-columns:repeat(2, 1fr);
+  grid-template-columns:repeat(3, 1fr);
   gap:22px;
   margin-top:20px;
 }
@@ -908,6 +908,11 @@ button:disabled, .btn:disabled{
 .achieve-card.leetcode-card:hover{
   border-color:#FFA116;
   box-shadow:0 12px 28px rgba(255,161,22,0.2);
+}
+
+.achieve-card.tuf-card:hover{
+  border-color:#FF6B35;
+  box-shadow:0 12px 28px rgba(255,107,53,0.25);
 }
 
 .achieve-card-head{
@@ -984,6 +989,19 @@ button:disabled, .btn:disabled{
   border-color:#FFA116;
   color:#FFFFFF;
   box-shadow:0 4px 16px rgba(255,161,22,0.3);
+}
+
+.achieve-link-btn.tuf-btn:hover{
+  background:rgba(255, 107, 53, 0.15);
+  border-color:#FF6B35;
+  color:#FFFFFF;
+  box-shadow:0 4px 16px rgba(255,107,53,0.3);
+}
+
+.social-badge.tuf-badge:hover{
+  background:rgba(255, 107, 53, 0.15);
+  border-color:#FF6B35;
+  box-shadow:0 6px 18px rgba(255, 107, 53, 0.3);
 }
 
 /* Footer */
@@ -1401,6 +1419,18 @@ html[data-theme='light'] .achieve-link-btn.lc-btn:hover{
   color: #c2410c;
 }
 
+html[data-theme='light'] .achieve-link-btn.tuf-btn:hover{
+  background: rgba(255, 107, 53, 0.12);
+  border-color: #EA580C;
+  color: #c2410c;
+}
+
+html[data-theme='light'] .social-badge.tuf-badge:hover{
+  background: rgba(255, 107, 53, 0.12);
+  border-color: #EA580C;
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.25);
+}
+
 html[data-theme='light'] .contact-info h3{
   color: #0f172a;
 }
@@ -1462,6 +1492,7 @@ html[data-theme='light'] #back-to-top:hover{
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .projects-grid{grid-template-columns:repeat(2,1fr)}
   .cert-grid{grid-template-columns:repeat(2,1fr)}
+  .achieve-grid{grid-template-columns:repeat(2,1fr)}
   .hero-inner{flex-direction:column-reverse;align-items:center}
   .hero-media{width:320px}
   .profile-photo{width:240px;height:240px}

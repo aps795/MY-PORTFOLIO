@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thinkora AI — General + Study Assistant</title>
+    <meta
+      name="description"
+      content="Thinkora AI is a smart general and study assistant for students, with chat, notes, quizzes, voice support, PDF help, and more."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f9ff;
+        --surface: #ffffff;
+        --surface-2: #f0f5ff;
+        --text: #0f172a;
+        --text-secondary: #475569;
+        --muted: #64748b;
+        --accent: #4f46e5;
+        --accent-2: #06b6d4;
+        --accent-3: #8b5cf6;
+        --border: rgba(15, 23, 42, 0.08);
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.08);
+        --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.12);
+      }
+
+      body.dark {
+        color-scheme: dark;
+        --bg: #0f172a;
+        --surface: #1a2847;
+        --surface-2: #233557;
+        --text: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --muted: #94a3b8;
+        --accent: #818cf8;
+        --accent-2: #22d3ee;
+        --accent-3: #c084fc;
+        --border: rgba(255, 255, 255, 0.1);
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.3);
+        --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.4);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        transition: background 0.3s ease, color 0.3s ease;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1280px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        background: rgba(245, 249, 255, 0.8);
+        border-bottom: 1px solid var(--border);
+      }
+
+      body.dark header {
+        background: rgba(15, 23, 42, 0.8);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        font-size: 1.2rem;
+        letter-spacing: -0.5px;
+      }
+
+      .brand-badge {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+        font-size: 1.4rem;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .nav-links a {
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      .nav-btn {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        padding: 10px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .nav-btn:hover {
+        background: var(--surface-2);
+        border-color: var(--accent);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 48px;
+        align-items: center;
+        padding: 80px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        line-height: 1.1;
+        margin: 0 0 20px;
+        letter-spacing: -0.02em;
+        font-weight: 900;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero p {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin: 0 0 32px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        border-radius: 8px;
+        padding: 14px 28px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .btn-secondary {
+        background: var(--surface-2);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        background: var(--surface);
+        border-color: var(--accent);
+      }
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .stat-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px 24px;
+        min-width: 140px;
+        box-shadow: var(--shadow);
+        transition: all 0.2s ease;
+      }
+
+      .stat-card:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .stat-card strong {
+        display: block;
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+        color: var(--accent);
+      }
+
+      .stat-card span {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      .hero-card {
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(6, 182, 212, 0.1));
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 32px;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .mini-window {
+        background: var(--surface);
+        border-radius: 16px;
+        padding: 20px;
+        border: 1px solid var(--border);
+        margin-bottom: 16px;
+      }
+
+      .mini-window:last-child {
+        margin-bottom: 0;
+      }
+
+      .bubble {
+        display: inline-block;
+        padding: 12px 16px;
+        border-radius: 12px;
+        margin: 8px 0;
+        font-size: 0.95rem;
+      }
+
+      .bubble.ai {
+        background: rgba(79, 70, 229, 0.12);
+      }
+
+      .bubble.user {
+        background: rgba(6, 182, 212, 0.12);
+        margin-left: 24px;
+      }
+
+      section {
+        padding: 60px 0;
+        border-top: 1px solid var(--border);
+      }
+
+      section:first-of-type {
+        border-top: none;
+      }
+
+      .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .section-title h2 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 800;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: var(--surface-2);
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .feature-card,
+      .stack-card,
+      .roadmap-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover,
+      .stack-card:hover,
+      .roadmap-card:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+      }
+
+      .feature-card h3,
+      .stack-card h3,
+      .roadmap-card h3 {
+        margin: 0 0 12px;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .feature-card p,
+      .stack-card p,
+      .roadmap-card p {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      .demo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .chat-panel,
+      .history-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .chat-log {
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 16px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      .chat-bubble {
+        max-width: 85%;
+        padding: 12px 16px;
+        border-radius: 14px;
+        line-height: 1.5;
+        word-wrap: break-word;
+      }
+
+      .chat-bubble.user {
+        align-self: flex-end;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+      }
+
+      .chat-bubble.bot {
+        align-self: flex-start;
+        background: var(--surface-2);
+      }
+
+      .composer {
+        display: flex;
+        gap: 12px;
+      }
+
+      .composer input {
+        flex: 1;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px 16px;
+        background: var(--surface-2);
+        color: var(--text);
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+      }
+
+      .composer input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+      }
+
+      .composer button {
+        border: none;
+        border-radius: 8px;
+        padding: 14px 24px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all 0.2s ease;
+      }
+
+      .composer button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .history-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      .history-list li {
+        padding: 12px 14px;
+        border-radius: 10px;
+        background: var(--surface-2);
+        color: var(--text-secondary);
+        line-height: 1.5;
+        font-size: 0.9rem;
+      }
+
+      .upload-box {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 2px dashed var(--border);
+        border-radius: 10px;
+        padding: 12px 16px;
+        cursor: pointer;
+        color: var(--accent);
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .upload-box:hover {
+        border-color: var(--accent);
+        background: var(--surface-2);
+      }
+
+      .upload-box input {
+        display: none;
+      }
+
+      .upload-status {
+        margin-top: 12px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .section-title--compact {
+        margin-bottom: 20px;
+      }
+
+      .section-title--spaced {
+        margin-top: 20px;
+      }
+
+      .mt-12 {
+        margin-top: 12px;
+      }
+
+      .p-muted {
+        margin: 12px 0 0;
+        color: var(--text-secondary);
+      }
+
+      .card-grid--single {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 40px 0;
+        color: var(--muted);
+        text-align: center;
+        border-top: 1px solid var(--border);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 1024px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 32px;
+          padding: 60px 0 40px;
+        }
+
+        .card-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .demo {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 40px;
+        }
+
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+        }
+
+        section {
+          padding: 40px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="brand-badge">✦</span>
+          <span>Thinkora AI</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#demo">Demo</a>
+          <a href="#stack">Stack</a>
+          <button class="nav-btn" id="themeToggle" type="button">🌙 Dark</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <span class="pill">✨ AI + Study Companion</span>
+          <h1>Learn Smarter.<br>Answer Faster.</h1>
+          <p>
+            Thinkora AI combines a powerful general assistant with student-focused features. Explain concepts, generate notes, solve quizzes, answer NCERT questions, and prepare for exams—all in one unified platform.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#demo">Try Demo →</a>
+            <a class="btn btn-secondary" href="#features">Explore Features</a>
+          </div>
+          <div class="stats">
+            <div class="stat-card">
+              <strong>24/7</strong>
+              <span>AI Support</span>
+            </div>
+            <div class="stat-card">
+              <strong>15+</strong>
+              <span>Features</span>
+            </div>
+            <div class="stat-card">
+              <strong>2 Languages</strong>
+              <span>Eng & Hindi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mini-window">
+            <div class="bubble ai">📚 Explain photosynthesis in simple terms</div>
+            <div class="bubble user">🤖 Sure! It's how plants convert sunlight into food and oxygen...</div>
+            <div class="bubble ai">📝 I can create notes, quizzes, or flashcards for this topic too!</div>
+          </div>
+          <div class="mini-window">
+            <strong>Perfect for Students</strong>
+            <p class="p-muted">
+              NCERT solutions, assignments, exam prep, competitive exams, and real-time help across all subjects.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="features">
+        <div class="section-title">
+          <h2>Core Features</h2>
+          <span class="pill">Three Pillars</span>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card">
+            <h3>🧠 General AI</h3>
+            <p>Ask anything: explain concepts, summarize text, translate languages, write essays, debug code, and get instant answers.</p>
+          </article>
+          <article class="feature-card">
+            <h3>📚 Study Assistant</h3>
+            <p>NCERT solutions, step-by-step explanations, quiz generation, MCQs, math help, assignment support, and exam prep.</p>
+          </article>
+          <article class="feature-card">
+            <h3>⚡ Smart Tools</h3>
+            <p>Voice input/output, image-based questions, PDF uploads, flashcards, chat history, dark mode, and multi-language support.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Smart Capabilities</h2>
+          <span class="pill">Voice • Vision • Text</span>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card">
+            <h3>🎙️ Voice Support</h3>
+            <p>Speak naturally and hear conversational responses. Perfect for hands-free studying and accessibility.</p>
+          </article>
+          <article class="feature-card">
+            <h3>📸 Image Recognition</h3>
+            <p>Upload photos of problems or scenes. Get instant explanations and solutions directly from images.</p>
+          </article>
+          <article class="feature-card">
+            <h3>📄 PDF Intelligence</h3>
+            <p>Upload PDFs, textbooks, or notes. Summarize content and ask follow-up questions for deeper understanding.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="demo" class="demo">
+        <div>
+          <div class="chat-panel">
+            <div class="section-title section-title--compact">
+              <h2>Live Demo</h2>
+              <span class="pill">Interactive</span>
+            </div>
+            <div class="chat-log" id="chatLog">
+              <div class="chat-bubble bot">👋 Hello! Ask me about science, Indian GK, coding, math, or exam prep. Try: "Who is the President of India?" or "What is photosynthesis?"</div>
+            </div>
+            <div class="composer">
+              <input id="chatInput" type="text" placeholder="Ask anything..." />
+              <button id="sendBtn">Send</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="history-panel">
+            <div class="section-title section-title--compact">
+              <h2>Study History</h2>
+              <span class="pill">Saved</span>
+            </div>
+            <ul class="history-list" id="historyList">
+              <li>Your recent study activity will appear here.</li>
+            </ul>
+            <label class="upload-box" for="uploadInput">
+              <input id="uploadInput" type="file" accept=".pdf,.txt,.doc,.docx" />
+              <span>📄 Upload Document</span>
+            </label>
+            <div class="upload-status" id="uploadStatus">Upload PDFs or notes for analysis and Q&A</div>
+          </div>
+
+          <div class="section-title section-title--spaced">
+            <h2>Roadmap</h2>
+            <span class="pill">Coming Soon</span>
+          </div>
+          <div class="card-grid card-grid--single">
+            <article class="roadmap-card">
+              <h3>🎯 Personalized Plans</h3>
+              <p>AI-driven study schedules tailored to your pace, weaknesses, and exam goals.</p>
+            </article>
+            <article class="roadmap-card">
+              <h3>👨‍🏫 Subject Tutors</h3>
+              <p>Specialized AI tutors for math, science, English, coding, and competitive exams.</p>
+            </article>
+            <article class="roadmap-card">
+              <h3>📊 Performance Analytics</h3>
+              <p>Track progress, quiz scores, weak areas, and get insights to improve faster.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="stack">
+        <div class="section-title">
+          <h2>Tech Stack</h2>
+          <span class="pill">Modern & Scalable</span>
+        </div>
+        <div class="card-grid">
+          <article class="stack-card">
+            <h3>🎨 Frontend</h3>
+            <p>Clean HTML5, modern CSS3 with gradient effects, responsive design for all devices.</p>
+          </article>
+          <article class="stack-card">
+            <h3>⚙️ Backend</h3>
+            <p>Python with custom HTTP server, real-time streaming, file uploads, and SQLite persistence.</p>
+          </article>
+          <article class="stack-card">
+            <h3>🤖 AI Models</h3>
+            <p>OpenAI GPT-4o-mini or Google Gemini with fallback knowledge base for instant responses.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        ✨ Thinkora AI — Built for curious minds, busy students, and AI-powered learning. © 2026
+      </div>
+    </footer>
+
+    <script>
+      const themeToggle = document.getElementById('themeToggle');
+      const body = document.body;
+
+      const savedTheme = localStorage.getItem('thinkora-theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        themeToggle.textContent = '☀️ Light';
+      }
+
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        const isDark = body.classList.contains('dark');
+        localStorage.setItem('thinkora-theme', isDark ? 'dark' : 'light');
+        themeToggle.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+      });
+
+      const chatLog = document.getElementById('chatLog');
+      const chatInput = document.getElementById('chatInput');
+      const sendBtn = document.getElementById('sendBtn');
+      const historyList = document.getElementById('historyList');
+      const uploadInput = document.getElementById('uploadInput');
+      const uploadStatus = document.getElementById('uploadStatus');
+
+      function addMessage(text, who) {
+        const bubble = document.createElement('div');
+        bubble.className = `chat-bubble ${who}`;
+        bubble.textContent = text;
+        chatLog.appendChild(bubble);
+        chatLog.scrollTop = chatLog.scrollHeight;
+      }
+
+      async function loadHistory() {
+        try {
+          const response = await fetch('/api/history');
+          if (!response.ok) throw new Error('history unavailable');
+          const data = await response.json();
+          const items = data.history || [];
+          historyList.innerHTML = '';
+          if (!items.length) {
+            historyList.innerHTML = '<li>Start a chat and your recent study activity will appear here.</li>';
+            return;
+          }
+          items.slice(-6).forEach((item) => {
+            const li = document.createElement('li');
+            li.textContent = `${item.role === 'assistant' ? 'AI' : item.role === 'upload' ? '📄' : 'You'}: ${item.message.substring(0, 50)}...`;
+            historyList.appendChild(li);
+          });
+        } catch (error) {
+          historyList.innerHTML = '<li>History is unavailable right now.</li>';
+        }
+      }
+
+      async function uploadDocument() {
+        const file = uploadInput.files[0];
+        if (!file) return;
+        uploadStatus.textContent = '⏳ Uploading...';
+        const formData = new FormData();
+        formData.append('file', file);
+        try {
+          const response = await fetch('/api/upload', { method: 'POST', body: formData });
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || 'Upload failed');
+          uploadStatus.textContent = '✅ ' + data.summary;
+          await loadHistory();
+        } catch (error) {
+          uploadStatus.textContent = '❌ Upload failed. Try again.';
+        }
+      }
+
+      async function sendMessage() {
+        const value = chatInput.value.trim();
+        if (!value) return;
+
+        addMessage(value, 'user');
+        chatInput.value = '';
+
+        const bubble = document.createElement('div');
+        bubble.className = 'chat-bubble bot';
+        bubble.textContent = '⏳ Thinking...';
+        chatLog.appendChild(bubble);
+        chatLog.scrollTop = chatLog.scrollHeight;
+
+        try {
+          const response = await fetch('/api/stream', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: value })
+          });
+
+          if (!response.ok) {
+            throw new Error('Backend unavailable');
+          }
+
+          const reader = response.body.getReader();
+          const decoder = new TextDecoder();
+          let text = '';
+
+          while (true) {
+            const { done, value: chunk } = await reader.read();
+            if (done) break;
+
+            const decoded = decoder.decode(chunk, { stream: true });
+            const lines = decoded.split('\n');
+
+            for (const line of lines) {
+              if (!line.startsWith('data: ')) continue;
+              const payload = line.slice(6).trim();
+              if (!payload || payload === '[DONE]') continue;
+              try {
+                const parsed = JSON.parse(payload);
+                if (parsed.text) {
+                  text += parsed.text;
+                  bubble.textContent = text;
+                  chatLog.scrollTop = chatLog.scrollHeight;
+                }
+              } catch (error) {
+                // ignore malformed stream chunk
+              }
+            }
+          }
+
+          if (!text.trim()) {
+            bubble.textContent = 'No response received.';
+          }
+          await loadHistory();
+        } catch (error) {
+          bubble.textContent = '⚠️ Backend not running. Start with: python3 app.py';
+        }
+      }
+
+      sendBtn.addEventListener('click', sendMessage);
+      uploadInput.addEventListener('change', uploadDocument);
+      chatInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          sendMessage();
+        }
+      });
+
+      loadHistory();
+    </script>
+  </body>
+</html>

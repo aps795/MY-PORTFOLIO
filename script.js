@@ -9,22 +9,34 @@ document.addEventListener('DOMContentLoaded', function () {
   // Theme: persist preference in localStorage
   const themeBtn = document.getElementById('theme-toggle');
   const storedTheme = localStorage.getItem('theme');
-  if (storedTheme === 'light') document.documentElement.setAttribute('data-theme', 'light');
-  if (themeBtn) themeBtn.textContent = (document.documentElement.getAttribute('data-theme') === 'light') ? 'Light' : 'Dark';
+  if (storedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+
+  function updateThemeButton() {
+    if (!themeBtn) return;
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    // When in Dark mode -> show option to switch to Light ('☀️ Light')
+    // When in Light mode -> show option to switch to Dark ('🌙 Dark')
+    themeBtn.innerHTML = isLight ? '🌙 Dark' : '☀️ Light';
+    themeBtn.setAttribute('aria-label', isLight ? 'Switch to Dark mode' : 'Switch to Light mode');
+    themeBtn.setAttribute('title', isLight ? 'Switch to Dark mode' : 'Switch to Light mode');
+    themeBtn.setAttribute('aria-pressed', String(isLight));
+  }
+
+  updateThemeButton();
 
   if (themeBtn) {
     themeBtn.addEventListener('click', () => {
       const isLight = document.documentElement.getAttribute('data-theme') === 'light';
       if (isLight) {
         localStorage.removeItem('theme');
-        themeBtn.textContent = 'Dark';
         document.documentElement.removeAttribute('data-theme');
       } else {
         localStorage.setItem('theme', 'light');
         document.documentElement.setAttribute('data-theme', 'light');
-        themeBtn.textContent = 'Light';
       }
-      themeBtn.setAttribute('aria-pressed', String(!isLight));
+      updateThemeButton();
     });
   }
 
